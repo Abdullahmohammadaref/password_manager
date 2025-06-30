@@ -6,6 +6,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.db import IntegrityError
 
+"""
+#####
+Reference to: Django_tutorials/15_Django-email-confirm at main · pythonlessons/Django_tutorials, 2022
+Django_tutorials/15_Django-email-confirm at main · pythonlessons/Django_tutorials, 2022
+"""
 from django.template.loader import render_to_string
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -311,6 +316,11 @@ def forgot_password(request):
         email = request.POST["email"].lower()
 
         user = User.objects.filter(username=username, email=email, is_active=True).first()
+        """
+        #####
+        Reference to: Django_tutorials/15_Django-email-confirm at main · pythonlessons/Django_tutorials, 2022
+        Django_tutorials/15_Django-email-confirm at main · pythonlessons/Django_tutorials, 2022
+        """
         if user:
             subject = "Password Reset"
             url = render_to_string('manager/password_reset_email.html', {

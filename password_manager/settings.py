@@ -141,6 +141,9 @@ KEY = b'D3zOQOQJfUQCr3dzPNeKwd5M6r_NEUjJ3bn4id6cpNs='
 
 
 """
+#####
+Reference to : Django_tutorials/15_Django-email-confirm at main · pythonlessons/Django_tutorials, 2022
+https://github.com/pythonlessons/Django_tutorials/blob/main/15_Django-email-confirm/djang_website/settings.py
 email backend.
 smtp email setup in reference to django documentation: 
 https://docs.djangoproject.com/en/5.2/topics/email/#obtaining-an-instance-of-an-email-backend

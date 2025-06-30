@@ -1,3 +1,8 @@
+"""
+#####
+Reference to: Django_tutorials/15_Django-email-confirm at main · pythonlessons/Django_tutorials, 2022
+https://github.com/pythonlessons/Django_tutorials/blob/main/15_Django-email-confirm/users/tokens.py
+"""
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 
 class AccountActivationTokenGenerator(PasswordResetTokenGenerator):
