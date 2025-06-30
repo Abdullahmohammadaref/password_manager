@@ -1,0 +1,34 @@
+{% extends "manager/layout.html" %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <!-- Using Post method in the form to avoid submission results (secret data) from showing in the url -->
+    <form action="{% url 'register' %}" method="post">
+        <!-- using django built-in csrf protection -->
+        <!-- it generates a specific token for the form as a hidden input -->
+        <!-- when form is submitted, django compares the hidden token to that of the user session that was sent by a cookie -->
+        <!-- if tokens doesn't match (a third party session is trying to submit the form) then the submission request is blocked -->
+        {% csrf_token %}
+        <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+        <br>
+        <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        <br>
+        <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        <br>
+        <label for="confirmed_password">Confirm Password:</label>
+            <input type="password" id="confirmed_password" name="confirmed_password">
+            <!-- suggest a strong password for the user -->
+            <a>Suggested Password: {{ suggested_password }}</a>
+        <br>
+            <input type="submit">
+    </form>
+    <!-- print message if exists -->
+    {% if message %}
+        {{ message }}
+    {% endif %}
+
+{% endblock %}

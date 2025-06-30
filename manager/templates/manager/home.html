@@ -1,0 +1,24 @@
+{% extends "manager/layout.html" %}
+
+{% block body %}
+
+    <h1>Home</h1>
+
+<a href="{% url 'new_account' %}">new_account</a>
+
+<br>
+<hr>
+<!-- show all accounts of user -->
+{% for account in accounts %}
+    <a href="{% url 'account' account.id %}">
+        <div class="container-fluid mt-4">
+            {{ account.name }}
+        </div>
+    </a>
+    <br>
+    <a href="{% url 'remove' account.id %}"> Delete {{account.name}}?</a>
+<br>
+<hr>
+{% endfor %}
+
+{% endblock %}
